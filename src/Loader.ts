@@ -7,4 +7,4 @@ export const tileManager = new TileManager();
 export const gameRenderer = new GameRenderer();
 
 //dummy game
-startGame(mapFromId(Math.floor(Math.random() * 2)));
+startGame(mapFromId(Math.floor(Math.random() * 4)));

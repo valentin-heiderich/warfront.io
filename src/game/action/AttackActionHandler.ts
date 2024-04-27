@@ -4,6 +4,8 @@ import {territoryManager} from "../TerritoryManager";
 import {random} from "../Random";
 import {gameMap} from "../Game";
 import {Player} from "../player/Player";
+import {tileManager} from "../../Loader";
+import {TileType} from "../../map/tile/TileType";
 
 class AttackActionHandler implements GameTickListener {
 	attacks: Attack[] = [];
@@ -14,12 +16,8 @@ class AttackActionHandler implements GameTickListener {
 	}
 
 	attackPlayer(player: number, target: number, percentage: number): void {
-		if (player === clientPlayer.id) {
-			console.log(playerManager.getPlayer(player).troops + "troops attacking " + target + " with " + percentage + " troops.");
-		}
-		if (player === target || target === territoryManager.OWNER_NONE - 1) {
-			return;
-		}
+		if (player === clientPlayer.id) {console.log(playerManager.getPlayer(player).troops + "troops attacking " + target + " with " + percentage + " troops.");}
+		if (player === target || target === territoryManager.OWNER_NONE - 1) {return;}
 		if (!this.playerIndex[player]) this.playerIndex[player] = [];
 		if (!this.playerIndex[target]) this.playerIndex[target] = [];
 
@@ -85,7 +83,7 @@ class AttackActionHandler implements GameTickListener {
 					this.playerIndex[attack.player][attack.target] = null;
 					break;
 				}
-				const timeCost = 3 / tiles.length * this.calculateSpeedFactor(playerManager.getPlayer(attack.player), playerManager.getPlayer(attack.target)); //TODO
+				const timeCost = 3 / tiles.length * this.calculateSpeedFactor(playerManager.getPlayer(attack.player), playerManager.getPlayer(attack.target), target, attack); //TODO
 				if (attack.time < timeCost) {
 					break;
 				}
@@ -124,9 +122,11 @@ class AttackActionHandler implements GameTickListener {
 		return Math.floor(target.troops / target.territorySize);
 	}
 
-	calculateSpeedFactor(player: Player, target: Player): number {
-		if (!target) return 1;
-		return Math.max(0.3, Math.min(2, target.territorySize / player.territorySize))
+	calculateSpeedFactor(player: Player, target: Player, tile: number, attack): number {
+		let tile_type = gameMap.getTileFromIndex(tile);
+		if(!tile_type) return 200;
+		if (!target) return tile_type.attack_speed_factor/(attack.troops/100);
+		return Math.max(0.3, Math.min(2, target.territorySize / player.territorySize)) * tile_type.attack_speed_factor;
 	}
 
 	clear(): void {

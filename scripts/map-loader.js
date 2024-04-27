@@ -18,7 +18,7 @@ module.exports = async function (map) {
 
 			const image = await sharp("resources/maps/" + file).ensureAlpha().raw().toBuffer({resolveWithObject: true});
 
-			const config = {tiles: ["#0000FF", "#00FF00"]};
+			const config = {tiles: ["#0066ff", "#00FF00", "#a89f9f", "#f8fcff"]};
 			try {
 				const options = JSON.parse(readFileSync("resources/maps/" + name + ".json", "utf8"));
 				for (const key in options) {

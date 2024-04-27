@@ -1,6 +1,8 @@
 import {TileType} from "./tile/TileType";
 import {WaterTile} from "./tile/WaterTile";
 import {GrassTile} from "./tile/GrassTile";
+import {VoidTile} from "./tile/VoidTile";
+import {MountainTile} from "./tile/MountainTile";
 import {gameMap} from "../game/Game";
 
 export class TileManager {
@@ -9,6 +11,8 @@ export class TileManager {
 	constructor() {
 		this.registerTileType(new WaterTile());
 		this.registerTileType(new GrassTile());
+		this.registerTileType(new MountainTile());
+		this.registerTileType(new VoidTile());
 	}
 
 	registerTileType(tileType: TileType): void {

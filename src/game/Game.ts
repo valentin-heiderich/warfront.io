@@ -19,7 +19,7 @@ export function startGame(map: GameMap) {
 	gameRenderer.updateLayers();
 	territoryManager.reset();
 	spawnManager.init(500);
-	playerManager.init([new Player(0, "Player", 0, 200, 200)], 0, 500);
+	playerManager.init([new Player(0, "Valentin", 255, 237, 0)], 0, 500);
 
 	isLocalGame = true;
 	random.reset(23452345);
