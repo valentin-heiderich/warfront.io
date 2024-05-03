@@ -126,7 +126,7 @@ class AttackActionHandler implements GameTickListener {
 		let tile_type = gameMap.getTileFromIndex(tile);
 		if(!tile_type) return 200;
 		if (!target) return tile_type.attack_speed_factor/(attack.troops/100);
-		return Math.max(0.3, Math.min(2, target.territorySize / player.territorySize)) * tile_type.attack_speed_factor;
+		return Math.max(0.3, Math.min(2, target.territorySize / player.territorySize)) * tile_type.attack_speed_factor /(attack.troops/100);
 	}
 
 	clear(): void {
