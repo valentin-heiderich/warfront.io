@@ -12,5 +12,7 @@
  */
 export enum TileTypeIds {
 	WATER,
-	GRASS
+	GRASS,
+	FOREST,
+	MOUNTAIN
 }
