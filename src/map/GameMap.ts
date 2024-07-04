@@ -2,7 +2,7 @@ import {TileType} from "./tile/TileType";
 import {tileManager} from "../Loader";
 
 export class GameMap {
-	private readonly name: string;
+	readonly name: string;
 	readonly width: number;
 	readonly height: number;
 	private readonly tiles: Uint16Array;
