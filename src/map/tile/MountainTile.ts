@@ -5,7 +5,7 @@ import {HSLColor} from "../../util/HSLColor";
 export class MountainTile extends TileType {
     readonly id: number = TileTypeIds.MOUNTAIN;
     readonly internalName = "mountain";
-    readonly baseColor: HSLColor = HSLColor.fromRGB(20, 25, 30);
+    readonly baseColor: HSLColor = HSLColor.fromRGB(92, 73, 73);
     readonly isSolid: boolean = true;
 
     readonly expansionTime: number = 200;

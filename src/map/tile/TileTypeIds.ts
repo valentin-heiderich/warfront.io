@@ -12,6 +12,7 @@
  */
 export enum TileTypeIds {
 	WATER,
+	SHALLOW_WATER,
 	GRASS,
 	FOREST,
 	MOUNTAIN

@@ -4,12 +4,14 @@ import {GrassTile} from "./tile/GrassTile";
 import {UnsupportedDataException} from "../util/exception/UnsupportedDataException";
 import {ForestTile} from "./tile/ForestTile";
 import {MountainTile} from "./tile/MountainTile";
+import {ShallowWaterTile} from "./tile/ShallowWaterTile";
 
 export class TileManager {
 	private tileTypes: TileType[] = [];
 
 	constructor() {
 		this.registerTileType(new WaterTile());
+		this.registerTileType(new ShallowWaterTile())
 		this.registerTileType(new GrassTile());
 		this.registerTileType(new ForestTile());
 		this.registerTileType(new MountainTile());
