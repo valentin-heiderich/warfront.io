@@ -46,7 +46,7 @@ export function startGame(map: GameMap, mode: GameMode) {
 	playerNameRenderingManager.reset(500);
 	attackActionHandler.init(500);
 	spawnManager.init(500);
-	playerManager.init([new Player(0, getSetting("playerName") ?? "UnknownPlayer", HSLColor.fromRGB(0, 200, 200))], 0, 500);
+	playerManager.init([new Player(0, getSetting("playerName") ?? "UnknownPlayer", HSLColor.fromRGBA(255, 0, 0, 0.8))], 0, 500);
 
 	isPlaying = true;
 	isLocalGame = true;
