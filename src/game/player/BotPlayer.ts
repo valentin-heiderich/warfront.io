@@ -7,7 +7,7 @@ import {HSLColor} from "../../util/HSLColor";
 
 export class BotPlayer extends Player {
 	constructor(id: number) {
-		super(id, "Bot", HSLColor.fromRGBA(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), 0.8));
+		super(id, "Bot", HSLColor.fromRGBA(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), 0.75));
 	}
 
 	//TODO: Implement bot logic

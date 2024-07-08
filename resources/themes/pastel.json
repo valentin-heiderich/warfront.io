@@ -4,18 +4,18 @@
     "lightness = 0.75"
   ],
   "border": [
-    "saturation * 0.8",
-    "lightness = 0.25"
+    "saturation * 0.5",
+    "lightness = 0.55"
   ],
   "tiles": [
     "lightness = 0.8"
   ],
   "tileOverwrite": {
-    "grass": "rgb(244, 243, 198)",
-    "water": "rgb(160, 203, 231)",
-    "shallow_water": "rgba(180, 234, 250, 1)",
-    "forest": "rgba(0, 90, 0, 1)",
-    "mountain": "rgba(80, 80, 80, 1)"
+    "grass": "rgb(242, 241, 196)",
+    "water": "rgb(157, 199, 226)",
+    "shallow_water": "rgba(180, 214, 236, 1)",
+    "forest": "rgba(170, 170, 114, 1)",
+    "mountain": "rgba(72, 71, 42, 1)"
   },
   "shaders": [
     {
